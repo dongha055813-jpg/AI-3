@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가이드 추천: 오사카 2박 3일 맞춤형 일정</title>
+    <style>
+        :root {
+            --primary: #22a6b3;
+            --accent: #ff7675;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Malgun Gothic', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0097e6, #22a6b3);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 숙소 정보 카드 스타일 */
+        .hotel-card {
+            background: white;
+            border-left: 5px solid var(--primary);
+            border-radius: 4px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .hotel-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hotel-address {
+            font-size: 0.95rem;
+            color: #636e72;
+            margin-bottom: 12px;
+        }
+
+        .maps-btn {
+            display: inline-block;
+            background-color: #34ace0;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .maps-btn:hover {
+            background-color: #22a6b3;
+        }
+
+        .guide-tip {
+            background-color: #ffeaa7;
+            border-left: 5px solid #fdcb6e;
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .day-section {
+            margin-bottom: 40px;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-date {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        /* 일정 아이템 스타일 */
+        .schedule-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-item.disabled {
+            opacity: 0.4;
+            background: #dfe4ea;
+            text-decoration: line-through;
+        }
+
+        .item-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .item-time {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .schedule-item.disabled .item-time {
+            background: #a4b0be;
+        }
+
+        .item-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        /* 버튼 스타일 */
+        .btn {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .btn-toggle {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-toggle.include-btn {
+            background-color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>무조건 성공하는 오사카 2박 3일 맞춤 가이드</h1>
+        <p>7월 18일 ~ 7월 20일 | 여름 시즌 최적화 동선</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- 숙소 정보 카드 -->
+        <div class="hotel-card">
+            <h3>📍 나의 여행 베이스캠프</h3>
+            <div class="hotel-address">
+                <strong>주소:</strong> 오사카부 오사카시 나니와구 556-0006 (구로몬 시장 인근)<br>
+                <span style="font-size: 0.85rem; color: #e74c3c;">* 난바역에서 도보 이동이 편리하며 도톤보리, 구로몬 시장과 무척 가깝습니다!</span>
+            </div>
+            <!-- 구글 지도 검색 연동 링크 (우편번호 기준) -->
+            <a href="https://www.google.com/maps/search/?api=1&query=556-0006" target="_blank" class="maps-btn">🗺️ 구글 지도에서 위치 보기</a>
+        </div>
+
+        <div class="guide-tip">
+            👨‍✈️ 가이드 동선 브리핑: 숙소가 구로몬 시장 옆 나니와구에 있어 첫날 라피트 하차 후 숙소로의 짐 이동이 매우 수월합니다. 마지막 날 공항으로 가기 전에도 숙소에 짐을 맡기거나 난바역 코인라커를 활용하기 최고의 위치입니다.
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="day-section">
+            <div class="day-title">
+                <span>DAY 1. 오사카 입성 & 화려한 도톤보리의 밤</span>
+                <span class="day-date">7월 18일</span>
+            </div>
+
+            <div class="schedule-item" id="item1-1">
+                <div class="item-info">
+                    <span class="item-time">14:00</span>
+                    <div class="item-title">난바역 도착 후 나니와구 숙소 체크인 및 재정비</div>
+                    <div class="item-desc">공항에서 라피트를 타고 난바역 도착 후, 숙소에 빠르게 체크인하여 짐을 풀고 가벼운 옷차림으로 나섭니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item1-1')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item1-2">
+                <div class="item-info">
+                    <span class="item-time">15:30</span>
+                    <div class="item-title">구로몬 시장 (숙소 바로 옆 로컬 간식 투어)</div>
+                    <div class="item-desc">숙소 바로 근처의 구로몬 전통시장에서 신선한 가리비 구이, 와규 꼬치, 타코야키로 가볍게 첫 먹방을 시작합니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item1-2')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item1-3">
+                <div class="item-info">
+                    <span class="item-time">18:00</span>
+                    <div class="item-title">도톤보리 크루즈 & 글리코상 인증샷</div>
+                    <div class="item-desc">선선해지는 저녁 시간, 강바람을 맞으며 미니 크루즈를 타고 오사카의 상징 글리코상 앞에서 기념사진을 찍습니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item1-3')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item1-4">
+                <div class="item-info">
+                    <span class="item-time">19:30</span>
+                    <div class="item-title">현지 오코노미야키 전문점 저녁 식사</div>
+                    <div class="item-desc">철판 앞에서 즉석으로 만들어주는 오코노미야키에 시원한 생맥주(나마비루) 한 잔으로 오사카의 첫날밤을 만끽합니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item1-4')">제외</button>
+            </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day-section">
+            <div class="day-title">
+                <span>DAY 2. 랜드마크 투어와 시원한 쇼핑&야경</span>
+                <span class="day-date">7월 19일</span>
+            </div>
+
+            <div class="schedule-item" id="item2-1">
+                <div class="item-info">
+                    <span class="item-time">10:00</span>
+                    <div class="item-title">오사카성 천수각 산책</div>
+                    <div class="item-desc">오전의 비교적 선선한 공기를 마시며 웅장한 오사카성을 관람합니다. 미니 로드기차를 타고 이동하면 체력을 아낄 수 있어요!</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item2-1')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item2-2">
+                <div class="item-info">
+                    <span class="item-time">13:00</span>
+                    <div class="item-title">우메다 한큐백화점 (점심식사 및 쇼핑)</div>
+                    <div class="item-desc">가장 더운 한낮에는 에어컨이 시원한 백화점 식당가에서 일식 돈카츠나 스시를 즐기고 쇼핑을 즐깁니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item2-2')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item2-3">
+                <div class="item-info">
+                    <span class="item-time">17:00</span>
+                    <div class="item-title">신세카이 골목 & 쿠시카츠 저녁</div>
+                    <div class="item-desc">레트로한 일본 감성이 가득한 신세카이 거리에서 통천각을 배경으로 사진을 찍고, 명물 꼬치튀김 '쿠시카츠'를 맛봅니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item2-3')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item2-4">
+                <div class="item-info">
+                    <span class="item-time">20:30</span>
+                    <div class="item-title">우메다 공중정원 전망대 야경</div>
+                    <div class="item-desc">하루의 마무리는 아름다운 오사카의 스카이라인을 360도로 감상할 수 있는 공중정원에서 멋지게 장식합니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item2-4')">제외</button>
+            </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-section">
+            <div class="day-title">
+                <span>DAY 3. 마지막 감성 골목과 아쉬운 굿바이</span>
+                <span class="day-date">7월 20일</span>
+            </div>
+
+            <div class="schedule-item" id="item3-1">
+                <div class="item-info">
+                    <span class="item-time">10:00</span>
+                    <div class="item-title">체크아웃 후 숙소에 짐 맡기기 및 카페 투어</div>
+                    <div class="item-desc">숙소에 캐리어를 잠시 맡겨두고 가벼운 몸으로 조용한 골목 다방(키사텐)에서 타마고 산도와 모닝커피를 즐깁니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item3-1')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item3-2">
+                <div class="item-info">
+                    <span class="item-time">12:30</span>
+                    <div class="item-title">난바 파크스 마지막 쇼핑 및 라멘 점심</div>
+                    <div class="item-desc">난바 파크스에서 기념품을 최종 쇼핑하고, 진한 국물의 하카타 라멘으로 여행을 든든하게 마무리합니다. 숙소에서 짐을 찾습니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item3-2')">제외</button>
+            </div>
+
+            <div class="schedule-item" id="item3-3">
+                <div class="item-info">
+                    <span class="item-time">15:00</span>
+                    <div class="item-title">난바역에서 간사이 국제공항으로 이동</div>
+                    <div class="item-desc">난바역에서 다시 라피트 열차에 몸을 싣고 아쉬움을 뒤로한 채 공항으로 출발합니다.</div>
+                </div>
+                <button class="btn btn-toggle" onclick="toggleItem('item3-3')">제외</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Osaka Summer Trip. Have a nice flight! ✈️</p>
+    </footer>
+
+    <script>
+        function toggleItem(itemId) {
+            const item = document.getElementById(itemId);
+            const button = item.querySelector('.btn');
+            
+            if (item.classList.contains('disabled')) {
+                item.classList.remove('disabled');
+                button.textContent = '제외';
+                button.classList.remove('include-btn');
+            } else {
+                item.classList.add('disabled');
+                button.textContent = '포함';
+                button.classList.add('include-btn');
+            }
+        }
+    </script>
+</body>
+</html>
